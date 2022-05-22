@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build-watch-tailwind": "npx tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch",
+    "build-tailwind": "npx tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css",
+    "build-eleventy": "npx @11ty/eleventy",
     "build-watch-eleventy": "npx @11ty/eleventy --serve",
-    "start": "npm-run-all -l -p -r build-watch-tailwind build-watch-eleventy"
+    "start": "npm-run-all -l -p -r build-watch-tailwind build-watch-eleventy",
+    "build": "npm run build-tailwind && npm run build-eleventy"
   },
   "keywords": [],
   "author": "",
