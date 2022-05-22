@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/output.css">
+    <link rel="stylesheet" href="/assets/css/docs.css">
+    <title>{{title}}</title>
+  </head>
+
+  <body class= "min-h-screen flex flex-col overflow-x-hidden bg-zinc-900 text-gray-200">
+    <header class ="px-6 lg:px-12 py-9 flex justify-between items-center text-white " >
+      <a class="flex items-center opacity-80 hover:opacity-100 font-semibold" href="/">
+        {% include "../svg/logo.svg" %}
+        <h1 class="px-2 text-4xl">usdtweak</h1>
+      </a>
+      {% include "../components/navigation.njk" %}
+    </header>
+    <main>
+      {{ content | safe }}
+    </main>
+  </body>
+</html>

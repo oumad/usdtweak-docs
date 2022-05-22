@@ -1,0 +1,14 @@
+<nav class="flex">
+  {% set navPages = collections.all | eleventyNavigation %}
+  <ul>
+    {% for entry in navPages %}
+      <li class="inline">
+        <a
+         href="{{ entry.url }}"
+         class="text-d-p-sm mx-2 sm:mx-4 last:mr-0 opacity-80 hover:opacity-100 font-semibold ">
+          {{ entry.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
