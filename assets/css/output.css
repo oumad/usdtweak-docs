@@ -516,6 +516,15 @@ p {
   border-width: 0;
 }
 
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.top-0 {
+  top: 0px;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -534,6 +543,14 @@ p {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .box-border {
@@ -564,6 +581,14 @@ p {
   height: 4rem;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.max-h-screen {
+  max-height: 100vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -572,8 +597,16 @@ p {
   width: 100%;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
 .max-w-5xl {
   max-width: 64rem;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .flex-col {
@@ -594,6 +627,10 @@ p {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .overflow-x-hidden {
@@ -648,6 +685,28 @@ p {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
 }
 
 .text-center {
@@ -760,6 +819,11 @@ p {
   .md\:p-10 {
     padding: 2.5rem;
   }
+
+  .md\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -800,6 +864,19 @@ p {
     padding-right: 3rem;
   }
 
+  .lg\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .lg\:pr-6 {
+    padding-right: 1.5rem;
+  }
+
+  .lg\:pl-3 {
+    padding-left: 0.75rem;
+  }
+
   .lg\:text-\[length\:64px\] {
     font-size: 64px;
   }
@@ -818,7 +895,33 @@ p {
     width: 15rem;
   }
 
+  .xl\:w-80 {
+    width: 20rem;
+  }
+
   .xl\:flex-row {
     flex-direction: row;
+  }
+
+  .xl\:pr-5 {
+    padding-right: 1.25rem;
+  }
+
+  .xl\:pl-5 {
+    padding-left: 1.25rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:w-96 {
+    width: 24rem;
+  }
+
+  .\32xl\:pr-6 {
+    padding-right: 1.5rem;
+  }
+
+  .\32xl\:pl-6 {
+    padding-left: 1.5rem;
   }
 }

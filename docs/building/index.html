@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/usdtweak-docs/assets/css/output.css">
     <link rel="stylesheet" href="/usdtweak-docs/assets/css/docs.css">
-    <title>Docs</title>
+    <title></title>
   </head>
 
   <body class= "min-h-screen flex flex-col overflow-x-hidden bg-zinc-900 text-gray-200">
-    <header class ="px-6 lg:px-12 py-9 flex justify-between items-center text-white " >
-      <a class="flex items-center opacity-80 hover:opacity-100 font-semibold" href="/usdtweak-docs/">
-        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <div class="flex h-full px-6" >
+      <div class = "h-full max-h-screen overflow-x-hidden overflow-y-auto w-64 xl:w-80 2xl:w-96 sticky top-0 py-10 pl-6 pr-3 xl:pr-5 2xl:pr-6" >
+        <a class="flex items-center opacity-80 hover:opacity-100 font-semibold" href="/usdtweak-docs/">
+          <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
@@ -444,55 +445,76 @@
   </g>
 </svg>
 
-        <h1 class="px-2 text-4xl">usdtweak</h1>
-      </a>
-      <nav class="flex">
+          <h1 class="px-2 text-4xl">usdtweak</h1>
+        </a>
+        <nav class="flex flex-col mt-4">
   
   <ul>
     
-      <li class="inline">
+      <li>
         <a
-         href="/usdtweak-docs/Docs/"
-         class="text-d-p-sm mx-2 sm:mx-4 last:mr-0 opacity-80 hover:opacity-100 font-semibold ">
-          Docs
+         href="/usdtweak-docs/docs/"
+         class="opacity-80 hover:opacity-100 font-semibold">
+          Overview
         </a>
+        
+        <ul class="pl-2">
+          
+            <li>
+              <a
+         href="/usdtweak-docs/docs/status/"
+         class="opacity-80 hover:opacity-100">
+                Status
+              </a>
+            </li>
+          
+        </ul>
       </li>
     
-      <li class="inline">
+      <li>
         <a
-         href="https://github.com/cpichard/usdtweak"
-         class="text-d-p-sm mx-2 sm:mx-4 last:mr-0 opacity-80 hover:opacity-100 font-semibold ">
-          Github
+         href="/usdtweak-docs/docs/building/"
+         class="opacity-80 hover:opacity-100 font-semibold">
+          Building
         </a>
+        
+        <ul class="pl-2">
+          
+            <li>
+              <a
+         href="/usdtweak-docs/docs/windows/"
+         class="opacity-80 hover:opacity-100">
+                Windows
+              </a>
+            </li>
+          
+            <li>
+              <a
+         href="/usdtweak-docs/docs/linux/"
+         class="opacity-80 hover:opacity-100">
+                Linux
+              </a>
+            </li>
+          
+            <li>
+              <a
+         href="/usdtweak-docs/docs/mac/"
+         class="opacity-80 hover:opacity-100">
+                Mac
+              </a>
+            </li>
+          
+        </ul>
       </li>
     
   </ul>
 </nav>
-    </header>
-    <main>
-      <h2>Introduction</h2>
-<p>usdtweak is a free and open source editor for Pixar's <a href="https://graphics.pixar.com/usd/release/index.html#">USD</a> format. The project is still in early stage, but usdtweak can already be used for small and simple tasks like cleaning assets, creating and editing layers or inspecting and fixing existing usd stages.</p>
-<p>This project is written in C++ and relies on <a href="https://github.com/ocornut/imgui">ImGUI</a> for the UI and <a href="https://github.com/glfw/glfw">GLFW</a> for the windowing system.</p>
-<h2>Sneak peek</h2>
-<p><img src="https://media.giphy.com/media/9Nb4JmmqEXzO05DpvL/giphy.gif" alt="screenshot1"></p>
-<h2>Status</h2>
-<p>There is no roadmap at the moment, as it is my side project and the development is slow and unpredictable, I can only work on it a few hours during the week-end. The original idea behind this project was to improve usdview by adding edition capabilities, for artists, technical directors and users who don't necessarily know the USD ascii syntax or are not familiar with python. So my current goal driving the developments is to provide at least the same functionalities as usdview and some ability to edit the stages and layers.</p>
-<p>As of today usdtweak allows</p>
-<ul>
-<li>to edit multiple stages and layers at the same time, copying and pasting prims between layers,</li>
-<li>to edit stages properties selecting the edit target</li>
-<li>to edit layer hierarchy: adding, deleting, reparenting, and renaming prims</li>
-<li>to edit layer stack: adding, deleting new sublayers</li>
-<li>to create and delete compositions like variants, references and payloads, inherits, ...</li>
-<li>to change property values in layers or stages</li>
-<li>to add and delete keys</li>
-<li>a minimal viewport interaction: translating, rotating, scaling objects.</li>
-<li>text editing (for small files)</li>
-<li>and more ...</li>
-</ul>
-<p>Drop me an email if you are interested in beta testing on windows or if you can't compile it.</p>
-<h2>Building</h2>
-<h3>Requirement</h3>
+      </div>
+      <div class="grow" >
+        <div class="py-6 mt-6 md:py-8 lg:py-10 lg:pr-6 lg:pl-3 xl:pl-5 2xl:pl-6">
+          <div class="md-docs">
+            <h1>Building</h1>
+<h2>Requirement</h2>
 <p>The project is almost self contained and only needs:</p>
 <ul>
 <li><a href="https://cmake.org/">cmake</a> installed (version &gt; 3.14)</li>
@@ -503,7 +525,7 @@
 <ul>
 <li><strong>pxr_DIR</strong> pointing to the USD installation directory containing the file pxrConfig.cmake</li>
 </ul>
-<h3>Compiling on linux</h3>
+<h2>Compiling on linux</h2>
 <p>On linux it should compile with:</p>
 <pre><code>git clone https://github.com/cpichard/usdtweak
 cd usdtweak
@@ -513,7 +535,7 @@ cd build
 cmake -Dpxr_DIR=/installs/usd-22.05 ..
 make
 </code></pre>
-<h3>Compiling on MacOs</h3>
+<h2>Compiling on MacOs</h2>
 <p>It compiles on MacOs Catalina. The viewport doesn't work as the required OpenGL version is not supported, but the layer editor does.</p>
 <pre><code>git clone https://github.com/cpichard/usdtweak
 cd usdtweak
@@ -523,7 +545,7 @@ cd build
 cmake -Dpxr_DIR=/installs/usd-22.05 ..
 make
 </code></pre>
-<h3>Compiling on Windows</h3>
+<h2>Compiling on Windows</h2>
 <p>It should compile successfully on Windows 10 with MSVC 19 or 17 using the RelWithDbInfo config. Make sure you open/use the x64 Native Tools commands prompt before typing the following commands:</p>
 <pre><code>git clone https://github.com/cpichard/usdtweak
 cd usdtweak
@@ -533,16 +555,16 @@ cd build
 cmake  -G &quot;Visual Studio 16 2019&quot; -A x64 -Dpxr_DIR=C:\installs\usd-22.05 ..
 cmake --build . --config RelWithDebInfo
 </code></pre>
-<h3>Installing on Windows</h3>
+<h2>Installing on Windows</h2>
 <p>You can install usdtweak with its dependencies on windows, it copies the required files in a directory with the following command:</p>
 <pre><code>cmake --install . --prefix &lt;where_you_want_to_install_usdtweak&gt; --config RelWithDebInfo
 </code></pre>
 <p>Note that it is not really tested on anything else than my machine/setup so it might not work for you, feel free to get in touch if you have any issue.</p>
-<h3>Creating a Windows installer</h3>
+<h2>Creating a Windows installer</h2>
 <p>There is an experimental packaging system using cpack/NSIS on windows which creates an installer. You have to make sure the nsis application is available on you system, you can download it from here <a href="https://nsis.sourceforge.io/Download">NSIS</a>. The command to create the installer is then:</p>
 <pre><code>cmake --build . --target package --config RelWithDebInfo
 </code></pre>
-<h3>Compiling with your version of glfw</h3>
+<h2>Compiling with your version of glfw</h2>
 <p>usdtweak is using <a href="https://www.glfw.org/">GLFW</a> for its windowing system. cmake should normally download, compile and install glfw without any user intervention. However, if you already have a compiled version you want to use instead, and you'll need to disable the automatic build of glfw, by passing an additional cmake variable:</p>
 <ul>
 <li><strong>glfw3_DIR</strong> pointing to your GLFW installation directory and containing the file glfw3Config.cmake</li>
@@ -550,9 +572,10 @@ cmake --build . --config RelWithDebInfo
 <p>A cmake command will then look like:</p>
 <pre><code>cmake  -G &quot;Visual Studio 16 2019&quot; -A x64 -Dpxr_DIR=C:\installs\usd-21.11 -Dglfw3_DIR=C:\installs\glfw3-3.3.6\lib\cmake\glfw3 ..
 </code></pre>
-<h2>Contact</h2>
-<p>If you want to know more, or have any issues, questions, drop me an email: cpichard.github@gmail.com</p>
 
-    </main>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
