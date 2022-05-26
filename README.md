@@ -28,8 +28,17 @@ This command will build the static files and watch for changes for hot reload.
 
 ## Useful links
 
-https://www.11ty.dev/docs/copy/
-https://www.11ty.dev/docs/layouts/
+For handling pages navigation
 https://www.11ty.dev/docs/plugins/navigation/
+
+For assets passthrough
+https://www.11ty.dev/docs/copy/
+
+Page layouts
+https://www.11ty.dev/docs/layouts/
+
+Tailwind CSS styling
 https://tailwindcss.com/docs
+
+Setting up nunjucks tooling in vscode
 https://hyunbinseo.medium.com/nunjucks-settings-for-vs-code-a0da0dc66b95

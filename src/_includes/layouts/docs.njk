@@ -10,15 +10,21 @@
   </head>
 
   <body class= "min-h-screen flex flex-col overflow-x-hidden bg-zinc-900 text-gray-200">
-    <header class ="px-6 lg:px-12 py-9 flex justify-between items-center text-white " >
-      <a class="flex items-center opacity-80 hover:opacity-100 font-semibold" href="{{ '/' | url }}">
-        {% include "../svg/logo.svg" %}
-        <h1 class="px-2 text-4xl">usdtweak</h1>
-      </a>
-      {% include "../components/navigation.njk" %}
-    </header>
-    <main>
-      {{ content | safe }}
-    </main>
+    <div class="flex h-full px-6" >
+      <div class = "h-full max-h-screen overflow-x-hidden overflow-y-auto w-64 xl:w-80 2xl:w-96 sticky top-0 py-10 pl-6 pr-3 xl:pr-5 2xl:pr-6" >
+        <a class="flex items-center opacity-80 hover:opacity-100 font-semibold" href="{{ '/' | url }}">
+          {% include "../svg/logo.svg" %}
+          <h1 class="px-2 text-4xl">usdtweak</h1>
+        </a>
+        {% include "../components/docs-navigation.njk" %}
+      </div>
+      <div class="grow" >
+        <div class="py-6 mt-6 md:py-8 lg:py-10 lg:pr-6 lg:pl-3 xl:pl-5 2xl:pl-6">
+          <div class="md-docs">
+            {{ content | safe }}
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
