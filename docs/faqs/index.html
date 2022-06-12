@@ -1067,25 +1067,11 @@
       <div class="grow" >
         <div class="py-6 mt-6 md:py-8 lg:py-10 lg:pr-6 lg:pl-3 xl:pl-5 2xl:pl-6">
           <div class="md-docs">
-            <h2>Compiling on Windows</h2>
-<p>It should compile successfully on Windows 10 with MSVC 19 or 17 using the RelWithDbInfo config. Make sure you open/use the x64 Native Tools commands prompt before typing the following commands:</p>
-<pre><code>git clone https://github.com/cpichard/usdtweak
-cd usdtweak
-git checkout develop
-mkdir build
-cd build
-cmake  -G &quot;Visual Studio 16 2019&quot; -A x64 -Dpxr_DIR=C:\installs\usd-22.05 ..
-cmake --build . --config RelWithDebInfo
-</code></pre>
-<h2>Installing on Windows</h2>
-<p>You can install usdtweak with its dependencies on windows, it copies the required files in a directory with the following command:</p>
-<pre><code>cmake --install . --prefix &lt;where_you_want_to_install_usdtweak&gt; --config RelWithDebInfo
-</code></pre>
-<p>Note that it is not really tested on anything else than my machine/setup so it might not work for you, feel free to get in touch if you have any issue.</p>
-<h2>Creating a Windows installer</h2>
-<p>There is an experimental packaging system using cpack/NSIS on windows which creates an installer. You have to make sure the nsis application is available on you system, you can download it from here <a href="https://nsis.sourceforge.io/Download">NSIS</a>. The command to create the installer is then:</p>
-<pre><code>cmake --build . --target package --config RelWithDebInfo
-</code></pre>
+            <h1>Frequently asked questions</h1>
+<h2>Is usdtweak cross platform ?</h2>
+<p>Yes, usdtweak is cross platform, it works in windows, linux and mac, but currently the viewport doesn't work in mac as the required OpenGL version is not supported.</p>
+<h2>Does usdtweak support Arnold renderer ?</h2>
+<p>usdtweak supports any renderer through hydra render delegates, so as long as your rendering engine's delegate is properly setup, it will appear in the list of available renderers inside of usdtweak.</p>
 
           </div>
         </div>
