@@ -12,62 +12,104 @@
       <a class="flex items-center opacity-90 hover:opacity-100 font-semibold" href="{{ '/' | url }}">
         {% include "../svg/logo.svg" %}
         <h1 class="px-2 text-4xl">{{ title }}</h1>
-        <span class="red-badge">alpha</span>
+        <span class="red-badge" title="This project is currently in alpha">alpha</span>
       </a>
       {% include "../components/navigation.njk" %}
     </header>
     <main>
       <div class="h-8"></div>
       <h1 class="sr-only">Welcome to usdtweak</h1>
-      <section class="px-6 sm:px-8 lg:flex flex-col lg:w-full lg:items-center lg:justify-between lg:gap-4">
-        <div class="lg:w-1/2 flex flex-col justify-center items-center">
-          <h2 class="text-center text-white sm:text-[length:48px] sm:leading-[50px] lg:text-[length:64px] lg:leading-[66px]">
-            <strong class="text-orange-400">Ultra</strong> lightweight <br>
-            <strong>
-              <span class="text-sky-400" >USD </span> editor</strong>
-          </h2>
-          <p class="" >
+      <section class="px-6 sm:px-8 lg:flex lg:flex-row flex-col lg:w-full lg:items-center lg:justify-between lg:gap-4">
+        <div class="flex flex-col items-center">
+          <div class="flex flex-col justify-center items-center flex-grow content-between">
+            <h2 class="text-center text-white sm:text-[length:48px] sm:leading-[50px] lg:text-[length:64px] lg:leading-[66px]">
+              <strong class="text-orange-400">Ultra</strong> lightweight <br>
+              <strong>
+                <span class="text-sky-400" >USD </span> editor</strong>
+            </h2>
+            <div class="lg:h-2"></div>
+            <p class="content-between text-center" >
             usdtweak is a free and open source editor for Pixar's USD format.
-          </p>
-        </div >
-        <div class="flex flex-col xl:flex-row gap-4 xl:">
-          <a href="https://github.com/cpichard/usdtweak" class="inline-flex items-center justify-center h-14 xl:h-16 box-border px-8 rounded bg-blue-brand text-white bg-sky-500 hover:bg-orange-400/75 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent focus:ring-blue-200 font-semibold w-full xl:w-60">
+            </p>
+          </div >
+          <div class="h-8"></div>
+          <div class="flex flex-col xl:flex-row gap-4">
+            <a href="https://github.com/cpichard/usdtweak" class="inline-flex items-center justify-center h-14 xl:h-16 box-border px-8 rounded bg-blue-brand text-white bg-sky-500 hover:bg-orange-400/75 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent focus:ring-blue-200 font-semibold w-full xl:w-60">
             Download
             <span class="mx-1">(alpha)</span>
-          </a>
-          <a href=" {{ '/docs' | url }}" class="inline-flex items-center justify-center h-14 xl:h-16 t box-border px-8 rounded bg-transparent text-white hover:text-orange-400 border-current hover:border-blue-brand focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent focus:ring-blue-200 focus:ring-opacity-80 font-semibold border-2 w-full xl:w-60">
+            </a>
+            <a href=" {{ '/docs' | url }}" class="inline-flex items-center justify-center h-14 xl:h-16 t box-border px-8 rounded bg-transparent text-white hover:text-orange-400 border-current hover:border-blue-brand focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent focus:ring-blue-200 focus:ring-opacity-80 font-semibold border-2 w-full xl:w-60">
             Read the docs
           </a>
+          </div>
         </div>
-        <div class="h-8"></div>
-        <div class="lg:w-5/6 ">
+        <div class="h-8 lg:hidden"></div>
+        <div class="lg:h-5/6">
           <img src=" {{ '/assets/images/screens/screen1.png' | url }}" alt="usdtweak screenshot">
         </div>
       </section>
-      <div class="h-16"></div>
+      <div class="h-20"></div>
       <section class="max-w-5xl p-6 mx-auto md:p-10">
-        <div class="lg:w-3/4 flex flex-col">
-          <h2 class="text-white">
-            <strong>Blazing  fast <span class="text-orange-400">startup</span> and <span class="text-sky-400">file loading</span> times</strong>
-          </h2>
-          <p class="my-4" >
-            usdtweak is written in C++ and relies entirely on GPU for the UI, no more bloated python packages overhead, allowing for the fastest startup and a snappy UI.
-        </p>
+        <div class="flex flex-col sm:flex-row items-center content-between" >
+          <div class="sm:mr-16 pb-6 sm:pb-0">
+            {% include "../svg/icons/speed-monitor.svg" %}
+          </div>
+          <div class="lg:w-3/4 flex flex-col text-justify">
+            <h2 class="text-white">
+              <strong>Blazing fast <span class="text-orange-400">startup</span> and file <span class="text-sky-400"> loading</span> times</strong>
+            </h2>
+            <p class="mt-4" >
+              usdtweak is written in C++ and relies entirely on GPU for the UI, no more bloated python packages overhead, allowing for the fastest startup and a snappy UI.
+            </p>
+          </div>
         </div>
-        <div class="h-16"></div>
-        <div class="lg:w-3/4 flex flex-col ">
-          <h2 class="text-white">
-            <strong>
-              Feature rich multi <span class="text-sky-400">Layer</span>  and <span class="text-orange-400">stage</span> editing </strong>
-          </h2>
-          <p class="my-4" >
-            usdtweak can efficiently load multiple layers and stages in memory at a time, allowing the user to quickly switch between them when authoring on layers or working with prim attributes on a stage.
+
+        <div class="h-20"></div>
+        <div class="flex flex-col sm:flex-row  items-center content-between" >
+          <div class="lg:w-3/4 flex flex-col text-justify order-2 sm:order-1">
+            <h2 class="text-white">
+              <strong>
+                Unmediated <span class="text-sky-400">USD</span>  based  <span class="text-orange-400">editing</span>
+              </strong>
+            </h2>
+            <p class="my-4" >
+              usdtweak provides a simple UI for a direct 1:1 corresspondance to native USD features, no runtime translations or obscure abstractions, ensuring the most interoperable and durable workflow.
+          </p>
+          </div>
+          <div class="sm:ml-16 pb-6 sm:pb-0 order-1 sm:order-2">
+            {% include "../svg/icons/dna.svg" %}
+          </div>
+        </div>
+        <div class="h-20"></div>
+        <div class="flex flex-col sm:flex-row items-center content-between" >
+          <div class="sm:mr-16 pb-6 sm:pb-0">
+            {% include "../svg/icons/multi-layer.svg" %}
+          </div>
+          <div class="lg:w-3/4 flex flex-col text-justify">
+            <h2 class="text-white">
+              <strong>
+              Multi <span class="text-sky-400">Layer</span>  and <span class="text-orange-400">stage</span> editing </strong>
+            </h2>
+            <p class="my-4" >
+            usdtweak can efficiently load multiple layers and stages in memory at a time, allowing the user to quickly switch between them when editing layers individually or authoring them directly from a stage.
         </p>
+          </div>
         </div>
       </section>
       <div class="h-16"></div>
     </main>
 
-    <footer></footer>
+    <footer class="p-9 flex justify-between items-center">
+      <a class="flex items-center opacity-90 hover:opacity-100 font-semibold" href="{{ '/' | url }}">
+        {% include "../svg/logo.svg" %}
+        <h1 class="px-2 text-4xl">{{ title }}</h1>
+        <span class="red-badge" title="This project is currently in alpha">alpha</span>
+      </a>
+      <nav>
+        <a href="https://github.com/cpichard/usdtweak" aria-label="GitHub">
+          {% include "../svg/icons/github.svg" %}
+        </a>
+      </nav>
+    </footer>
   </body>
 </html>
