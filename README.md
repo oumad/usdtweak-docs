@@ -2,15 +2,13 @@
 
 This repo is used for generating static files for usdtweak website
 
-## Installation
+### Installation
 
 #### Requirements
 
-- Node JS : tested on version 16, 11ty requires at least v12
+- Node JS : docusaurus requires at least v16
 
 #### Steps
-
-Clone this repo and install node modules
 
 ```
 git clone https://github.com/cpichard/usdtweak-docs.git
@@ -18,27 +16,25 @@ cd usdtweak-docs
 npm install
 ```
 
-## Running locally
+### Local Development
 
 ```
 npm start
 ```
 
-This command will build the static files and watch for changes for hot reload.
+This command starts a local development server and opens up a browser window. Changes are reflected live without having to restart the server.
 
-## Useful links
+### Local Build
 
-For handling pages navigation
-https://www.11ty.dev/docs/plugins/navigation/
+You can use this command to test a build locally
 
-For assets passthrough
-https://www.11ty.dev/docs/copy/
+```
+npm run serve -- --build --port 80 --host 0.0.0.0
+```
 
-Page layouts
-https://www.11ty.dev/docs/layouts/
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-Tailwind CSS styling
-https://tailwindcss.com/docs
+### More
 
-Setting up nunjucks tooling in vscode
-https://hyunbinseo.medium.com/nunjucks-settings-for-vs-code-a0da0dc66b95
+You can learn more about how to edit, add doc, blog pages at
+https://docusaurus.io/docs/category/guides
