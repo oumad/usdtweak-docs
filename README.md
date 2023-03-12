@@ -1,44 +1,41 @@
-# usdtweak-docs
+# Website
 
-This repo is used for generating static files for usdtweak website
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-## Installation
-
-#### Requirements
-
-- Node JS : tested on version 16, 11ty requires at least v12
-
-#### Steps
-
-Clone this repo and install node modules
+### Installation
 
 ```
-git clone https://github.com/cpichard/usdtweak-docs.git
-cd usdtweak-docs
-npm install
+$ yarn
 ```
 
-## Running locally
+### Local Development
 
 ```
-npm start
+$ yarn start
 ```
 
-This command will build the static files and watch for changes for hot reload.
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-## Useful links
+### Build
 
-For handling pages navigation
-https://www.11ty.dev/docs/plugins/navigation/
+```
+$ yarn build
+```
 
-For assets passthrough
-https://www.11ty.dev/docs/copy/
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-Page layouts
-https://www.11ty.dev/docs/layouts/
+### Deployment
 
-Tailwind CSS styling
-https://tailwindcss.com/docs
+Using SSH:
 
-Setting up nunjucks tooling in vscode
-https://hyunbinseo.medium.com/nunjucks-settings-for-vs-code-a0da0dc66b95
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
