@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocusaurus=self.webpackChunkdocusaurus||[]).push([[690],{552:s=>{s.exports=JSON.parse('{"label":"motivation","permalink":"/usdtweak-docs/blog/tags/motivation","allTagsPath":"/usdtweak-docs/blog/tags","count":1}')}}]);

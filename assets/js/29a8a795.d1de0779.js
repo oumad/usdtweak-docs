@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocusaurus=self.webpackChunkdocusaurus||[]).push([[172],{3392:s=>{s.exports=JSON.parse('[{"label":"usdtweak","permalink":"/usdtweak-docs/blog/tags/usdtweak","count":1},{"label":"introduction","permalink":"/usdtweak-docs/blog/tags/introduction","count":1},{"label":"motivation","permalink":"/usdtweak-docs/blog/tags/motivation","count":1}]')}}]);
