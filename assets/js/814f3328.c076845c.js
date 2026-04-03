@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkusdtweak_docs=globalThis.webpackChunkusdtweak_docs||[]).push([[7472],{5513(s){s.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Introducing usdtweak","permalink":"/usdtweak-docs/blog/introducing-usdtweak","unlisted":false,"date":"2023-03-11T00:00:00.000Z"}]}')}}]);

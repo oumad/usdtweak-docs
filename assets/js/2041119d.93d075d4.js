@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkusdtweak_docs=self.webpackChunkusdtweak_docs||[]).push([[149],{2690:s=>{s.exports=JSON.parse('{"label":"introduction","permalink":"/usdtweak-docs/blog/tags/introduction","allTagsPath":"/usdtweak-docs/blog/tags","count":1}')}}]);

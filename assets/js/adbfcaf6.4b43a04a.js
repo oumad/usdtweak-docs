@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkusdtweak_docs=globalThis.webpackChunkusdtweak_docs||[]).push([[3860],{6645(a){a.exports=JSON.parse('{"metadata":{"permalink":"/usdtweak-docs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

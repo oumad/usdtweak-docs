@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkusdtweak_docs=globalThis.webpackChunkusdtweak_docs||[]).push([[1903],{1912(s){s.exports=JSON.parse('{"blogBasePath":"/usdtweak-docs/blog","blogTitle":"Blog","authorsListPath":"/usdtweak-docs/blog/authors"}')}}]);
