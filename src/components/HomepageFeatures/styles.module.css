@@ -1,11 +1,66 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 4rem 0;
   width: 100%;
 }
 
+.featureCard {
+  background: var(--ut-card-bg, #1e293b);
+  border: 1px solid var(--ut-card-border, #334155);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.25s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8, #fb923c);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.featureCard:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.featureCard:hover::before {
+  opacity: 1;
+}
+
+.featureIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
 .featureSvg {
-  height: 200px;
-  width: 200px;
+  height: 80px;
+  width: 80px;
+}
+
+.featureTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.featureDescription {
+  font-size: 0.925rem;
+  color: var(--ut-text-muted, #94a3b8);
+  line-height: 1.65;
+  margin: 0;
 }

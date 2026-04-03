@@ -1,18 +1,13 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Custom CSS for usdtweak documentation site.
+ * Modern, dark-first design with blue (#38bdf8) and orange (#fb923c) accents.
  */
 
-/* You can override the default Infima variables here. */
+/* ============================================================
+   CSS Custom Properties
+   ============================================================ */
+
 :root {
-  --ifm-color-secondary: #fb923c;
-  --ifm-color-secondary-dark: #fa811e;
-  --ifm-color-secondary-darker: #fa780e;
-  --ifm-color-secondary-darkest: #d56204;
-  --ifm-color-secondary-light: #fca35a;
-  --ifm-color-secondary-lighter: #fcac6a;
-  --ifm-color-secondary-lightest: #fdc597;
   --ifm-color-primary: #38bdf8;
   --ifm-color-primary-dark: #1bb3f7;
   --ifm-color-primary-darker: #0caef6;
@@ -20,37 +15,37 @@
   --ifm-color-primary-light: #55c7f9;
   --ifm-color-primary-lighter: #64ccfa;
   --ifm-color-primary-lightest: #90dafb;
+
+  --ifm-color-secondary: #fb923c;
+  --ifm-color-secondary-dark: #fa811e;
+  --ifm-color-secondary-darker: #fa780e;
+  --ifm-color-secondary-darkest: #d56204;
+  --ifm-color-secondary-light: #fca35a;
+  --ifm-color-secondary-lighter: #fcac6a;
+  --ifm-color-secondary-lightest: #fdc597;
+
   --ifm-code-font-size: 95%;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
+    sans-serif;
+  --ifm-heading-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI',
+    Roboto, sans-serif;
+  --ifm-font-weight-bold: 600;
+  --ifm-heading-font-weight: 700;
+
+  --ifm-border-radius: 0.5rem;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Custom tokens */
+  --ut-dark-bg: #0f172a;
+  --ut-card-bg: #1e293b;
+  --ut-card-border: #334155;
+  --ut-text-muted: #94a3b8;
+  --ut-gradient-start: #38bdf8;
+  --ut-gradient-end: #fb923c;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-/* [data-theme="dark"] {
-  --ifm-color-primary: #fb923c;
-  --ifm-color-primary-dark: #fa811e;
-  --ifm-color-primary-darker: #fa780e;
-  --ifm-color-primary-darkest: #d56204;
-  --ifm-color-primary-light: #fca35a;
-  --ifm-color-primary-lighter: #fcac6a;
-  --ifm-color-primary-lightest: #fdc597;
-  --ifm-color-secondary: #38bdf8;
-  --ifm-color-secondary-dark: #1bb3f7;
-  --ifm-color-secondary-darker: #0caef6;
-  --ifm-color-secondary-darkest: #0791ce;
-  --ifm-color-secondary-light: #55c7f9;
-  --ifm-color-secondary-lighter: #64ccfa;
-  --ifm-color-secondary-lightest: #90dafb;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-} */
-
-[data-theme="dark"] {
-  --ifm-color-secondary: #fb923c;
-  --ifm-color-secondary-dark: #fa811e;
-  --ifm-color-secondary-darker: #fa780e;
-  --ifm-color-secondary-darkest: #d56204;
-  --ifm-color-secondary-light: #fca35a;
-  --ifm-color-secondary-lighter: #fcac6a;
-  --ifm-color-secondary-lightest: #fdc597;
+[data-theme='dark'] {
   --ifm-color-primary: #38bdf8;
   --ifm-color-primary-dark: #1bb3f7;
   --ifm-color-primary-darker: #0caef6;
@@ -58,5 +53,360 @@
   --ifm-color-primary-light: #55c7f9;
   --ifm-color-primary-lighter: #64ccfa;
   --ifm-color-primary-lightest: #90dafb;
+
+  --ifm-color-secondary: #fb923c;
+  --ifm-color-secondary-dark: #fa811e;
+  --ifm-color-secondary-darker: #fa780e;
+  --ifm-color-secondary-darkest: #d56204;
+  --ifm-color-secondary-light: #fca35a;
+  --ifm-color-secondary-lighter: #fcac6a;
+  --ifm-color-secondary-lightest: #fdc597;
+
+  --ifm-background-color: #0f172a;
+  --ifm-background-surface-color: #1e293b;
+  --ifm-font-color-base: #e2e8f0;
+  --ifm-font-color-secondary: #94a3b8;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================================
+   Global typography & base
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.02em;
+}
+
+p {
+  line-height: 1.75;
+}
+
+/* ============================================================
+   Scrollbar (dark mode)
+   ============================================================ */
+
+[data-theme='dark'] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ============================================================
+   Navbar — glassmorphism style
+   ============================================================ */
+
+.navbar {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom-color: rgba(51, 65, 85, 0.5);
+}
+
+[data-theme='light'] .navbar {
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom-color: rgba(226, 232, 240, 0.6);
+}
+
+/* Gradient accent line below navbar */
+.navbar::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--ut-gradient-start),
+    var(--ut-gradient-end),
+    transparent
+  );
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.navbar__link {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+.navbar__link--active {
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   Sidebar (docs)
+   ============================================================ */
+
+[data-theme='dark'] .menu {
+  background: transparent;
+}
+
+.menu__link {
+  border-radius: 0.375rem;
+  font-size: 0.9rem;
+  font-weight: 450;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+[data-theme='dark'] .menu__link:hover {
+  background-color: rgba(56, 189, 248, 0.08);
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .menu__link--active:not(.menu__link--sublist) {
+  background-color: rgba(56, 189, 248, 0.12);
+  color: var(--ifm-color-primary);
+}
+
+.menu__list-item-collapsible .menu__link {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   Code blocks
+   ============================================================ */
+
+[data-theme='dark'] pre {
+  background: #0d1525 !important;
+  border: 1px solid #1e293b;
+  border-radius: 0.75rem;
+}
+
+code {
+  border-radius: 0.375rem;
+}
+
+[data-theme='dark'] code {
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  color: #7dd3fc;
+}
+
+/* Inline code inside links should not override link color */
+a code {
+  color: inherit;
+}
+
+/* ============================================================
+   Cards & admonitions
+   ============================================================ */
+
+[data-theme='dark'] .alert {
+  border-radius: 0.75rem;
+}
+
+/* ============================================================
+   Table of contents
+   ============================================================ */
+
+.table-of-contents__link {
+  font-size: 0.875rem;
+  transition: color 0.15s ease;
+}
+
+[data-theme='dark'] .table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.footer {
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--ut-gradient-start),
+    var(--ut-gradient-end),
+    transparent
+  );
+}
+
+[data-theme='dark'] .footer--dark {
+  background: #0b1120;
+}
+
+.footer__title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #e2e8f0;
+}
+
+.footer__link-item {
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
+  line-height: 2;
+}
+
+[data-theme='dark'] .footer__link-item:hover {
+  color: var(--ifm-color-primary);
+}
+
+.footer__copyright {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #1e293b;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* ============================================================
+   Buttons — global polish
+   ============================================================ */
+
+.button {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   Pagination
+   ============================================================ */
+
+[data-theme='dark'] .pagination-nav__link {
+  background: var(--ut-card-bg);
+  border-color: var(--ut-card-border);
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme='dark'] .pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 1px var(--ifm-color-primary);
+}
+
+/* ============================================================
+   Search (if Algolia is added later)
+   ============================================================ */
+
+[data-theme='dark'] .DocSearch-Button {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+}
+
+/* ============================================================
+   Smooth transitions for theme switch
+   ============================================================ */
+
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================================
+   Announcement bar (if enabled)
+   ============================================================ */
+
+div[class*='announcementBar'] {
+  background: linear-gradient(
+    90deg,
+    var(--ut-gradient-start),
+    var(--ut-gradient-end)
+  );
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+div[class*='announcementBar'] a {
+  color: #0f172a;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* ============================================================
+   Doc page layout tweaks
+   ============================================================ */
+
+[data-theme='dark'] .docMainContainer_node_modules {
+  background: #0f172a;
+}
+
+.markdown h1:first-child {
+  font-size: 2.2rem;
+}
+
+.markdown > h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ut-card-border);
+}
+
+/* ============================================================
+   Selection highlight
+   ============================================================ */
+
+::selection {
+  background: rgba(56, 189, 248, 0.3);
+  color: inherit;
 }

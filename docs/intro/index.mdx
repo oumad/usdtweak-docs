@@ -1,5 +1,7 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
+title: "Introduction"
+description: "An overview of usdtweak, the free and open-source USD scene editor"
 ---
 
 import ReactPlayer from "react-player";
@@ -7,33 +9,43 @@ import usdtweakVideo from "./video/usdtweak-ui.mp4";
 
 # Introduction
 
-usdtweak is a free and open source editor for Pixar's [USD](https://graphics.pixar.com/usd/release/index.html#) format. The project is still in early stage, but usdtweak can already be used for small and simple tasks like cleaning assets, creating and editing layers or inspecting and fixing existing usd stages.
+**usdtweak** is a free, open-source editor for Pixar's [Universal Scene Description (USD)](https://openusd.org/) format. It provides an intuitive graphical interface for inspecting, authoring, and editing USD stages and layers, without requiring knowledge of USD's ASCII syntax or Python scripting.
 
-This project is written in C++ and relies on [ImGUI](https://github.com/ocornut/imgui) for the UI and [GLFW](https://github.com/glfw/glfw) for the windowing system.
+Built with **C++**, **ImGui**, and **OpenGL** (via GLFW), usdtweak is lightweight and portable. It runs on Windows, macOS, and Linux with minimal dependencies beyond a USD installation.
 
 ## Sneak peek
 
 <ReactPlayer playing loop volume={0} muted url={usdtweakVideo} />
 
-## Status
+## Key features
 
-There is no roadmap at the moment, as it is my side project and the development is slow and unpredictable, I can only work on it a few hours during the week-end. The original idea behind this project was to improve usdview by adding edition capabilities, for artists, technical directors and users who don't necessarily know the USD ascii syntax or are not familiar with python. So my current goal driving the developments is to provide at least the same functionalities as usdview and some ability to edit the stages and layers.
+- **Multi-file editing** -- Open and edit multiple stages and layers simultaneously. Copy and paste prims between layers.
+- **Stage and layer editing** -- Work at either the composed stage level or the raw layer level, depending on your needs.
+- **Composition arc support** -- Create and manage references, payloads, variants, inherits, specializes, and sublayers through the UI.
+- **3D viewport** -- Visualize your scenes with Hydra Storm rendering. Translate, rotate, and scale objects interactively with gizmo manipulators.
+- **Property editing** -- Modify prim properties, metadata, and attribute values including time-sampled data.
+- **Text editing** -- View and edit layers directly as USDA ASCII text for quick fixes and debugging.
+- **Export options** -- Export stages as USDZ packages (standard or ARKit-compatible) or as flattened USD files.
+- **Edit target control** -- Choose which layer receives your edits when working on a composed stage, enabling non-destructive workflows.
+- **Undo/redo** -- Full undo and redo support for all editing operations.
+- **Animation playback** -- Timeline panel with playback controls and frame scrubbing.
+- **Extensibility** -- Launcher bar for integrating external tools, and a playblast tool for rendering image sequences.
 
-As of today usdtweak allows
+## Who is it for?
 
-- to edit multiple stages and layers at the same time, copying and pasting prims between layers,
-- to edit stages properties selecting the edit target
-- to edit layer hierarchy: adding, deleting, reparenting, and renaming prims
-- to edit layer stack: adding, deleting new sublayers
-- to create and delete compositions like variants, references and payloads, inherits, ...
-- to change property values in layers or stages
-- to add and delete keys
-- a minimal viewport interaction: translating, rotating, scaling objects.
-- text editing (for small files)
-- and more ...
+usdtweak is designed for:
 
-Drop me an email if you are interested in beta testing on windows or if you can't compile it.
+- **Pipeline technical directors** building and debugging USD assets and compositions
+- **Technical artists** who need a visual editor for USD without the overhead of a full DCC application
+- **USD developers** who want a quick way to inspect and modify USD files during development
+- **Anyone** working with USD who prefers a graphical editor over command-line tools or Python scripts
+
+## Getting started
+
+New to usdtweak? Head to the [Quick Start](../getting-started/quick-start) guide to get up and running in minutes, or check the [Installation](../getting-started/installation) page for download and setup instructions.
 
 ## Contact
 
-If you want to know more, or have any issues, questions, drop me an email: cpichard.github@gmail.com
+If you have questions, feedback, or encounter issues, you can:
+- Open an issue on [GitHub](https://github.com/cpichard/usdtweak/issues)
+- Send an email to: cpichard.github@gmail.com

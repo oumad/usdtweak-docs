@@ -1,0 +1,8 @@
+{
+  "label": "User Interface",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Detailed reference for every panel and control in the usdtweak interface"
+  }
+}

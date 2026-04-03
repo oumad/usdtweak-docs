@@ -1,8 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+import { themes } from "prism-react-renderer";
+
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -21,8 +23,13 @@ const config = {
   organizationName: "cpichard", // Usually your GitHub org/user name.
   projectName: "usdtweak", // Usually your repo name.
 
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "warn",
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -49,15 +56,17 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: "./sidebars.js",
           editUrl: "https://github.com/oumad/usdtweak-docs/tree/master/",
         },
         blog: {
           showReadingTime: true,
           editUrl: "https://github.com/oumad/usdtweak-docs/tree/master/",
+          onInlineAuthors: "ignore",
+          onUntruncatedBlogPosts: "ignore",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: "./src/css/custom.css",
         },
       }),
     ],
@@ -68,6 +77,11 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
         title: "usdtweak",
         logo: {
@@ -93,28 +107,32 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
+            title: "Documentation",
             items: [
               {
-                label: "Docs",
+                label: "Getting Started",
                 to: "/docs/intro",
               },
             ],
           },
           {
-            title: "Community",
+            title: "Project",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                label: "GitHub",
+                href: "https://github.com/cpichard/usdtweak",
               },
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                label: "Releases",
+                href: "https://github.com/cpichard/usdtweak/releases",
               },
               {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                label: "Wiki",
+                href: "https://github.com/cpichard/usdtweak/wiki",
+              },
+              {
+                label: "Report a Bug",
+                href: "https://github.com/cpichard/usdtweak/issues",
               },
             ],
           },
@@ -125,14 +143,10 @@ const config = {
                 label: "Blog",
                 to: "/blog",
               },
-              {
-                label: "GitHub",
-                href: "https://github.com/cpichard/usdtweak",
-              },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} usdtweak-docs. Built with Docusaurus.`,
+        copyright: `Copyright \u00A9 ${new Date().getFullYear()} usdtweak project. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -141,4 +155,4 @@ const config = {
     }),
 };
 
-module.exports = config;
+export default config;

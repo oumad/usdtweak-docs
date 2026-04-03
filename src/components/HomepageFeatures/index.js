@@ -4,34 +4,32 @@ import styles from "./styles.module.css";
 
 const FeatureList = [
   {
-    title: "Lightning fast",
+    title: "Lightning Fast",
     Svg: require("@site/static/img/icons/speed-monitor.svg").default,
     description: (
       <>
-        usdtweak's C++ code and GPU-powered UI eliminate bloated Python
-        packages, ensuring the quickest startup time and a responsive UI.
+        Written in C++ with a GPU-powered UI, usdtweak eliminates bloated
+        Python layers for instant startup and a responsive experience.
       </>
     ),
   },
   {
-    title: "Unmediated USD-based",
+    title: "Direct USD Access",
     Svg: require("@site/static/img/icons/dna.svg").default,
     description: (
       <>
-        With usdtweak's simple interface, you can directly edit USD features,
-        without any translations or abstractions, for the most interoperable and
-        long-lasting workflow.
+        Edit USD features directly with no translations or abstractions — the
+        most interoperable and long-lasting pipeline workflow.
       </>
     ),
   },
   {
-    title: "Multi-layer and stage",
+    title: "Multi-Layer Editing",
     Svg: require("@site/static/img/icons/multi-layer.svg").default,
     description: (
       <>
-        usdtweak efficiently loads multiple layers and stages into memory,
-        allowing you to seamlessly switch between them for individual layer
-        editing or direct stage authoring.
+        Load multiple layers and stages into memory simultaneously, switching
+        seamlessly between individual layer editing or direct stage authoring.
       </>
     ),
   },
@@ -40,12 +38,12 @@ const FeatureList = [
 function Feature({ Svg, title, description }) {
   return (
     <div className={clsx("col col--4")}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
+      <div className={styles.featureCard}>
+        <div className={styles.featureIconWrapper}>
+          <Svg className={styles.featureSvg} role="img" />
+        </div>
+        <h3 className={styles.featureTitle}>{title}</h3>
+        <p className={styles.featureDescription}>{description}</p>
       </div>
     </div>
   );
